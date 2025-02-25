@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemas con var</title>
+</head>
+<body>
+    <script>
+/*
+Problemas con la palabra clave var en JavaScript
+Veamos otro ejemplo.
+
+Crearemos una variable, edad. Luego escribiremos una sentencia if que verifique si edad tiene algún
+valor y, si lo tiene, que devuelva un console.log del número que sea el doble de la edad.
+
+Este es un ejemplo simplificado, pero primero revisaremos si edad tiene un valor porque queremos
+asegurarnos que estamos sumando valores válidos.
+*/
+
+var edad = 27
+if (edad) {
+ var dobleDeEdad = edad + edad
+ document.write(`El doble de tu edad actual es ${dobleDeEdad}`)
+}
+
+/*
+Ahora en la consola verás El doble de tu edad actual es 54.
+
+Nuestra variable, dobleDeEdad, es ahora una variable global. Si ingresas dobleDeEdad en tu consola,
+verás que tienes acceso a ella.
+*/
+
+dobleDeEdad
+54
+
+/*
+Como podemos observar, dobleDeEdad está ahora disponible en cualquier parte de nuestro código.
+La variable dobleDeEdad no fue declarada dentro de ninguna función. En consecuencia, ha sido creada
+con alcance global.
+
+El problema es que dobleDeEdad solo es una variable que usamos una vez dentro de nuestra sentencia if,
+la cuál no necesitamos que esté disponible en todo nuestro código. Se ha 'filtrado' fuera de la
+sentencia en la que fue creada, incluso si no necesitábamos que eso sucediera.
+*/
+
+var edad = 27
+if (edad) {
+ //Necesitamos que var dobleDeEdad exista solamente en este bloque de código dentro de las llaves 
+    var dobleDeEdad = edad + edad
+    console.log(`El doble de tu edad actual es ${dobleDeEdad}`)
+}
+
+dobleDeEdad
+54
+//Nuestra var dobleDeEdad está disponible por fuera de estas llaves, en el ámbito global
+
+/*
+Sería bueno que tuviésemos una manera de crear una variable que *solo* exista dentro de la
+sentencia if en donde fue creada. En otras palabras, el bloque de código que existe dentro de 
+las llaves.
+*/
+
+var edad = 27
+if (edad) {
+ //Queremos que nuestra variable solo exista aquí, donde la usaremos
+ var dobleDeEdad = edad + edad
+ console.log(`El doble de tu edad actual es ${dobleDeEdad}`)
+}
+
+/*Para ayudar a resolver este problema, las palabras clave const y let fueron introducidas
+a JavaScript.*/
+    </script>
+</body>
+</html>

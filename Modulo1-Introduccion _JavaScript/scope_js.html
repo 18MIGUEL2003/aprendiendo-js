@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+/*
+¿Qué es el Scope?
+
+El ámbito (Scope) se refiere a los lugares dentro de nuestro código en donde las variables están
+disponibles para su uso. Cuando una variable tiene un ámbito global, significa que está disponible
+en cualquier lugar de tu programa. Veamos un ejemplo.
+
+Toma el siguiente bloque de código y pégalo en tu consola.
+*/
+var nombre = 'Madison'
+function imprimirNombre() {
+    document.write(nombre)
+}
+imprimirNombre()
+
+/*
+Aquí hemos creado y llamado una función, imprimirNombre, que imprimirá el valor de la variable nombre,
+Madison. Verás eso impreso en tu consola.
+
+Debido a que nuestra variable fue creada por fuera de la función, tiene alcance global.
+Esto significa que está disponible en cualquier parte de tu código, incluyendo dentro de cualquier
+función. Es por eso que la función, imprimirNombre, tiene acceso a la variable nombre.
+
+Vamos ahora a crear una variable que tenga alcance de función. Esto significa que la variable solo se
+puede acceder dentro de la función en la que fue creada. Este siguiente ejemplo será muy similar al
+código anterior, pero con un posicionamiento diferente de la variable.
+*/
+
+function imprimirAño() {
+ var año = 2020
+}
+document.write(año)
+
+/*
+Ahora nos saldrá un error en la consola: año is not defined (año no está definida). Esto es porque
+la variable año tiene alcance de función. Es decir, solo existe dentro de la función dentro de la cuál
+fue creada. Al ejecutar console.log, hemos intentado acceder a la variable desde afuera de la función,
+donde no tenemos acceso.
+
+Las variables con alcance de función son útiles a los programadores porque frecuentemente queremos
+crear variables que sólo sirvan o sean necesarias dentro de cierta función. Crear variables globales
+también nos puede generar errores o fallos.
+
+Ahora que tenemos un entendimiento básico de lo que es el alcance, podemos volver a nuestra discusión
+acerca de los problemas que tiene la palabra clave var.
+*/
+    </script>
+</body>
+</html>

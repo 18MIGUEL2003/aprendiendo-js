@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Const</title>
+</head>
+<body>
+    <script>
+/*
+Cómo usar la palabra clave const en JavaScript
+
+const funciona similar a var, pero con unas cuantas diferencias grandes.
+
+Primero, const tiene alcance de bloque, mientras que var tiene alcance de función.
+
+¿Qué es un bloque?
+
+Un bloque se refiere a cualquier espacio que esté entre llaves de apertura y cierre.
+Esto puede parecer confuso al principio. Escribamos nuestro ejemplo anterior, pero esta vez usando
+const en vez de var al declarar nuestra variable dobleDeEdad.
+*/
+
+var edad = 27
+if (edad) {
+ const dobleDeEdad = edad + edad
+ console.log(`El doble de tu edad actual es ${dobleDeEdad}`)
+}
+
+/*
+Ahora escribe dobleDeEdad en tu consola y presiona Enter. Te debería arrojar un error,
+dobleDeEdad is not defined ( dobleDeEdad no está definida). Esto es porque const tiene alcance de
+bloque: solo existe dentro del bloque donde fue definida.
+
+La variable dobleDeEdad está 'atrapada' dentro de las dos llaves de apertura y cierre. El código que
+está dentro de dichas llaves si puede acceder a dobleDeEdad, pero ningún código fuera de estas lo
+puede hacer.
+
+Al usar const en vez de var, nuestro problema anterior es solucionado. Nuestra variable dobleDeEdad
+ya no se está 'filtrando' en nuestro ámbito global innecesariamente. En cambio, solo está disponible dentro del bloque de código donde fue creada.
+
+¿Cómo funcionan las variables con ámbito de bloque dentro del contexto de las funciones?
+Para aprender sobre esto, vamos a crear y luego llamar a una función, devuelveX.
+*/
+
+function devuelveX() {
+ const x = 1
+ return x
+}
+devuelveX()
+
+/*
+Al llamar a la función devuelveX, podemos ver que esta devuelve el valor de x, que es 1.
+
+Si luego escribimos x, la consola arrojará referenceError: x is not defined (Error de referencia: x no está definida).
+Esto es porque las funciones también con consideradas como bloques, lo que quiere decir que nuestra const x solo existirá dentro de la función.
+
+Lo siguiente que debes saber sobre const es que solo se puede declarar una sola vez. Escribe este código en la consola:
+*/
+
+// const y = 1
+// const y = 2
+
+/*
+Deberías ver un error,  Identifier 'y' has already been declared (El identificador 'y' ya ha sido
+declarado).
+
+Esta es la diferencia entre var y const. Mientras que const arroja un error, haciéndote saber que
+ya has declarado esta variable, la palabra clave var no.
+*/
+
+var x = 1
+var x = 2
+
+/*
+La variable x señalará hacia el valor 2 sin errores. Esto puede causar errores para ti como programador,
+siendo que a lo mejor no quisiste asignarle un nuevo valor a tu variable. Entonces, usar const te
+puede ayudar, dado que recibirás un error si tratas de reasignar la variable accidentalmente.
+
+Esta es una fortaleza de la palabra clave const que fue introducida como una mejor manera de crear
+variables en JavaScript. Sin embargo, ¿qué pasa en los casos cuando sí quieres actualizar el valor
+de tu variable?
+
+Veamos un ejemplo en donde querríamos hacer eso.
+
+Declaremos una variable adulto, con valor false. También crearemos una variable edad con valor  20.
+
+const adulto = false
+
+const edad = 20
+
+Digamos que queremos revisar la edad del usuario y cambiar el valor de nuestra variable adulto a
+verdadero si la edad está por encima de 18. Podemos escribir una sentencia para hacerlo.
+*/
+
+if (edad > 18) {
+ adulto = true   
+}
+
+/*
+¿Qué pasa cuando ejecutamos este código?
+
+Aquí veremos Error: Assignment to constant variable (Error: asignación a variable constante).
+
+Esto es porque, en concordancia con las reglas de const, no podemos volver a declarar esta variable.
+Debido a que nuestra variable adulto ya está apuntando al valor false, no podemos hacerle apuntar a
+algo más.
+
+Si imprimimos adulto de nuevo, podemos ver que se mantuvo igual y contiene el mismo valor de false.
+
+No podemos reasignar nuestra variable adulto, lo que significa que const está funcionando de la
+manera esperada. Sin embargo, ¿qué pasa si queremos reasignar esta variable?
+
+Frecuentemente los programadores querrán poder volver a declarar sus variables.
+
+Aquí es donde nuestra tercera palabra clave, let, surge.
+*/
+
+/*
+Cómo usar la palabra clave let en JavaScript
+Primero revisemos como let es similar a const.
+
+Let, como const, tiene alcance de bloque. Si reemplazas const por let en nuestro ejemplo previo de
+dobleDeEdad, funcionaría igual.
+
+Sin embargo, let es diferente de const de un modo fundamental. Las variables declaradas con la palabra
+clave let pueden volver a ser declaradas, a diferencia de const. Repasemos un ejemplo.
+
+Usando nuestro mismo ejemplo previo, reemplaza const por let. Mantendremos nuestra variable edad como
+una const con el valor de 20.*/
+
+let adulto = false
+const edad = 20
+if (edad > 18) {
+    adulto = true
+}
+
+/*
+Ahora si escribimos adulto, en vez de recibir un error como se generó anteriormente, ahora veremos
+el resultado true.
+
+Al usar la palabra clave let, hemos actualizado nuestra variable para que apunte al valor de true
+como queríamos. Algunas veces en programación, necesitaremos actualizar una variable dependiendo de
+ciertos datos que recibamos. Podemos usar let para lograr esto.
+*/
+
+/*Conclusión
+
+En resumen, hemos aprendido que las variables son usadas para registrar y reusar datos en nuestros
+programas informáticos. El alcance (Scope) se refiere al lugar en nuestro código donde las variables
+están disponibles para su uso.
+
+Las variables se pueden declarar usando var, const, o let. var tiene alcance de función, mientras que
+const y let tienen alcance de bloque. Las variables const no pueden ser reasignadas, mientras que las
+variables let si pueden serlo.
+
+var, const, y let pueden ser confusas al principio. Puede ayudar que leas varios tutoriales al
+respecto, así como también poner tu propio código a prueba de diferentes maneras para fortalecer tu
+entendimiento.
+
+Tener una base sólida de var, const y let te ayudará no solo al principio de tu carrera de JavaScript,
+sino también a lo largo de esta.
+*/
+    </script>
+</body>
+</html>
