@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol</title>
+</head>
+<body>
+<!--
+El tipo de dato Symbol representa valores únicos e inmutables que pueden ser utilizados
+como identificadores de propiedades en objetos.
+
+Los símbolos se crean utilizando la función Symbol(), que opcionalmente puede recibir un argumento 
+de tipo String para describir el símbolo.
+-->
+    <script>
+let simbolo1 = Symbol();
+let simbolo2 = Symbol('descripcion');
+let simbolo3 = Symbol('descripcion');
+
+console.log(simbolo1); // Symbol()
+console.log(simbolo2); // Symbol(descripcion)
+console.log(simbolo3); // Symbol(descripcion)
+console.log(simbolo2 === simbolo3); // false
+
+// Uso de símbolos como identificadores de propiedades en objetos
+const objeto = {
+    [simbolo1]: 'valor del simbolo1'
+};
+
+console.log(objeto[simbolo1]); // valor del simbolo1
+    </script>
+<!--
+Aunque simbolo2 y simbolo3 tienen la misma descripción, estos símbolos son distintos y no iguales.
+Los símbolos se utilizan principalmente para crear propiedades únicas en objetos y evitar colisiones
+de nombres, así como para definir propiedades y métodos que no deben ser accedidos de forma accidental.
+
+Con esto, hemos cubierto todos los tipos de datos primitivos en JavaScript. A continuación, analicemos
+los tipos de datos compuestos y sus características.
+-->
+</body>
+</html>

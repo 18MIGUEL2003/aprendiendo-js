@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigInt</title>
+</head>
+<body>
+<!--
+Es útil para representar números muy grandes que no caben en un tipo de dato “Number” y es
+compatible con la mayoría de las operaciones aritméticas básicas.
+
+Sin embargo, aún no es compatible con algunas funciones como Math.floor o parseInt, por lo que es
+importante tener en cuenta sus limitaciones.
+
+Se agregó en la versión ECMAScript 2020 y se puede crear añadiendo “n” al final de un número. 
+Por ejemplo:
+-->
+    <script>
+        // Creación de un BigInt:
+        const bigIntValue = 123456789012345678901234567890n;
+        console.log(bigIntValue); // 123456789012345678901234567890n
+
+        // Operaciones aritméticas con BigInt:
+        const firstBigInt = 123456789012345678901234567890n;
+        const secondBigInt = 9876543210n;
+        const sum = firstBigInt + secondBigInt;
+        console.log(sum); // 123456789012345678901244444420n
+
+        // Conversiones de BigInt a Number:
+        const bigInt = 123456789012345678901234567890n;
+        const number = Number(bigInt);
+        console.log(number); // 12345678901234567886083863530
+
+        // Conversiones de Number a BigInt:
+        // const number = 1234567890123456000;
+        // const bigInt = BigInt(number);
+        console.log(bigInt); // 1234567890123456000n
+    </script>
+</body>
+</html>
