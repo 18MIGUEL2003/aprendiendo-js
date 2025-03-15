@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de propinas</title>
+    <link rel="stylesheet" href="calculadora_propinas.css">
+</head>
+<body>
+    <div class="Bloque_Padre">
+    <h1 class="titulop">Calculadora de Propinas</h1>
+
+    <p>Elige un porcentaje de la propina:</p>
+    <input type="radio" name="porcentaje" value="10"> 10%
+    <input type="radio" name="porcentaje" value="20"> 20%
+    <input type="radio" name="porcentaje" value="30"> 30%
+
+    <p>Ingresa el total de la cuenta:</p>
+    <input class="total" type="text" id="total-cuenta" placeholder="Total de la cuenta"> <br>
+    <br>
+    <button id="calcular">Realizar Cálculo</button>
+    <div id="resultado"></div>
+    <script src="calculadora_propinas.js"></script>
+</div>
+</body>
+</html>
