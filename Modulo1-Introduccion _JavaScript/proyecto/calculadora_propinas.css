@@ -1,5 +1,7 @@
 .Bloque_Padre {
     text-align: center;
+    border-radius: 30px;
+    border: 2px solid rgb(49, 127, 179); /* Grosor, estilo y color del borde */
 }
 .titulop {
     color: rgb(67, 137, 184);
